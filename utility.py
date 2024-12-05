@@ -36,3 +36,13 @@ def question(list):
         print(f'{query} is not in the list')
     if searchList(ask('look for something else?'),YesList):
         question(list)
+def insert(thing,index,list):
+    if index >=len(list):
+        list.append(thing)
+    else:
+        for i in range((len(list)-index)+1):
+            if i==0:
+                list.append(list[-1])
+            else:
+                list[-i]=list[-i-1]
+        list[index]=thing
